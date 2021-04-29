@@ -42,6 +42,7 @@ return [
     */
 
     'models' => [
+        'namespace' => 'App\\Models'
         //'namespace' => 'App\\',
     ],
 
@@ -99,7 +100,7 @@ return [
         /*
          * Set whether or not the multilingual is supported by the BREAD input.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Select default language
@@ -111,6 +112,7 @@ return [
          */
         'locales' => [
             'en',
+            'fr'
             //'pt',
         ],
     ],
@@ -145,8 +147,11 @@ return [
 
         'widgets' => [
             'TCG\\Voyager\\Widgets\\UserDimmer',
-            'TCG\\Voyager\\Widgets\\PostDimmer',
-            'TCG\\Voyager\\Widgets\\PageDimmer',
+            // 'TCG\\Voyager\\Widgets\\PostDimmer',
+            // 'TCG\\Voyager\\Widgets\\PageDimmer',
+            // 'App\\Widgets\\AffaireDimmer',
+            'App\\Widgets\\AgencyDimmer',
+            // 'App\\Widgets\\ClientDimmer',
         ],
 
     ],
@@ -183,7 +188,7 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#230158',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
