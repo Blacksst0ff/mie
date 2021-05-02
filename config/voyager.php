@@ -149,9 +149,9 @@ return [
             'TCG\\Voyager\\Widgets\\UserDimmer',
             // 'TCG\\Voyager\\Widgets\\PostDimmer',
             // 'TCG\\Voyager\\Widgets\\PageDimmer',
-            // 'App\\Widgets\\AffaireDimmer',
-            'App\\Widgets\\AgencyDimmer',
-            // 'App\\Widgets\\ClientDimmer',
+            'App\\Widgets\\AffaireDimmer',
+            //'App\\Widgets\\AgenceDimmer',
+            'App\\Widgets\\ClientDimmer',
         ],
 
     ],

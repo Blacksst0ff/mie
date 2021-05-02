@@ -2,13 +2,13 @@
 
 namespace App\Widgets;
 
-use App\Models\Agency;
+use App\Models\Client;
 use TCG\Voyager\Widgets\BaseDimmer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 
-class AgencyDimmer extends BaseDimmer
+class ClientDimmer extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -23,18 +23,18 @@ class AgencyDimmer extends BaseDimmer
      */
     public function run()
     {
-        $count = \App\Models\Agency::count();
-        $string = trans_choice('voyager::dimmer.agency', $count);
+        $count = \App\Models\Client::count();
+        $string = trans_choice('voyager::dimmer.client', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-company',
+            'icon'   => 'voyager-people',
             'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.agency_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => __('voyager::dimmer.client_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('voyager::dimmer.agency_link_text'),
-                'link' => route('voyager.agencies.index'),
+                'text' => __('voyager::dimmer.client_link_text'),
+                'link' => route('voyager.clients.index'),
             ],
-            'image' => '/storage/img/widgets/agencies.jpg',
+            'image' => '/storage/img/widgets/clients.jpg',
         ]));
     }
 
@@ -45,6 +45,6 @@ class AgencyDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return Auth::user()->can('browse', app(Agency::class));
+        return Auth::user()->can('browse', app(Client::class));
     }
 }
